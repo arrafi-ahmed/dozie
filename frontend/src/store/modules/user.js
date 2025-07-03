@@ -33,7 +33,7 @@ export const actions = {
   signin({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/user/signin", request)
+        .post("/user/signin", request)
         .then((response) => {
           commit("setToken", response.headers?.authorization);
           commit("setCurrentUser", response.data?.payload?.currentUser);
@@ -54,7 +54,7 @@ export const actions = {
   register({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/user/register", request)
+        .post("/user/register", request)
         .then((response) => {
           commit("setToken", response.headers?.authorization);
           commit("setCurrentUser", response.data?.payload?.currentUser);

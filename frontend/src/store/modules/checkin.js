@@ -21,7 +21,7 @@ export const actions = {
   scanByRegistrationId({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/checkin/scanByRegistrationId", {payload: request})
+        .post("/checkin/scanByRegistrationId", {payload: request})
         .then((response) => {
           commit("setRegistration", response.data?.payload);
           resolve(response.data?.payload);
@@ -34,7 +34,7 @@ export const actions = {
   save({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/checkin/save", {
+        .post("/checkin/save", {
           payload: {
             newCheckin: request.newCheckin,
             eventId: request.eventId,
@@ -65,7 +65,7 @@ export const actions = {
   setStatistics({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/checkin/getStatistics", {
+        .get("/checkin/getStatistics", {
           params: {eventId: request.eventId, date: request.date},
         })
         .then((response) => {

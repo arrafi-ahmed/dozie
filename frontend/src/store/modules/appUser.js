@@ -26,7 +26,7 @@ export const actions = {
       (request.user.role.toLowerCase() === "admin" ? "Admin" : null);
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/appUser/save", {payload: request.user})
+        .post("/appUser/save", {payload: request.user})
         .then((response) => {
           commit(commitName, {
             ...response.data?.payload,
@@ -41,7 +41,7 @@ export const actions = {
   setAppUsers({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/appUser/getAppUsers", {
+        .get("/appUser/getAppUsers", {
           params: {clubId: request},
         })
         .then((response) => {

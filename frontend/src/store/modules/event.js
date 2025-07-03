@@ -56,7 +56,7 @@ export const actions = {
   setEvents({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/event/getAllEvents", {params: {clubId: request}})
+        .get("/event/getAllEvents", {params: {clubId: request}})
         .then((response) => {
           commit("setEvents", response.data?.payload);
           resolve(response);
@@ -69,7 +69,7 @@ export const actions = {
   setActiveEvents({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/event/getAllActiveEvents", {
+        .get("/event/getAllActiveEvents", {
           params: {
             clubId: request.clubId,
             currentDate: request.currentDate,
@@ -87,7 +87,7 @@ export const actions = {
   setEvent({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/event/getEvent", {
+        .get("/event/getEvent", {
           params: {eventId: request.eventId},
         })
         .then((response) => {
@@ -102,7 +102,7 @@ export const actions = {
   setEventByEventIdnClubId({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/event/getEventByEventIdnClubId", {
+        .get("/event/getEventByEventIdnClubId", {
           params: {eventId: request.eventId, clubId: request.clubId},
         })
         .then((response) => {
@@ -117,7 +117,7 @@ export const actions = {
   save({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/event/save", request)
+        .post("/event/save", request)
         .then((response) => {
           commit("saveEvent", response.data?.payload);
           resolve(response);
@@ -130,7 +130,7 @@ export const actions = {
   removeEvent({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/event/removeEvent", {
+        .get("/event/removeEvent", {
           params: {eventId: request.eventId},
         })
         .then((response) => {
@@ -145,7 +145,7 @@ export const actions = {
   removeExtras({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/event/removeExtras", {
+        .get("/event/removeExtras", {
           params: {extrasId: request.extrasId, eventId: request.eventId},
         })
         .then((response) => {
@@ -160,7 +160,7 @@ export const actions = {
   saveExtras({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/event/saveExtras", request)
+        .post("/event/saveExtras", request)
         .then((response) => {
           commit("saveExtras", response.data?.payload);
           resolve(response);
@@ -173,7 +173,7 @@ export const actions = {
   setExtras({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/event/getExtras", {params: {eventId: request}})
+        .get("/event/getExtras", {params: {eventId: request}})
         .then((response) => {
           commit("setExtras", response.data?.payload);
           resolve(response);

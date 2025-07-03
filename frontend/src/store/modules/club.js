@@ -36,7 +36,7 @@ export const actions = {
   setClubs({commit}) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/club/getAllClubs")
+        .get("/club/getAllClubs")
         .then((response) => {
           commit("setClubs", response.data?.payload);
           resolve(response);
@@ -49,7 +49,7 @@ export const actions = {
   setClub({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/club/getClub", {params: {clubId: request}})
+        .get("/club/getClub", {params: {clubId: request}})
         .then((response) => {
           commit("setClub", response.data?.payload);
           resolve(response);
@@ -62,7 +62,7 @@ export const actions = {
   save({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/club/save", request)
+        .post("/club/save", request)
         .then((response) => {
           commit("saveClub", response.data?.payload);
           resolve(response);
@@ -75,7 +75,7 @@ export const actions = {
   removeClub({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/club/removeClub", {
+        .get("/club/removeClub", {
           params: {clubId: request.clubId},
         })
         .then((response) => {

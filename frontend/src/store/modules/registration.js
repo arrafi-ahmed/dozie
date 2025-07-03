@@ -39,7 +39,7 @@ export const actions = {
   bulkImportAttendee({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/registration/bulkImportAttendee", request)
+        .post("/registration/bulkImportAttendee", request)
         .then((response) => {
           resolve(response.data?.payload);
         })
@@ -51,7 +51,7 @@ export const actions = {
   initRegistration({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/registration/initRegistration", request)
+        .post("/registration/initRegistration", request)
         .then((response) => {
           commit("setRegistration", response.data?.payload);
           resolve(response.data?.payload);
@@ -64,7 +64,7 @@ export const actions = {
   saveRegistration({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/registration/save", request)
+        .post("/registration/save", request)
         .then((response) => {
           commit("setRegistration", response.data?.payload);
           resolve(response.data?.payload);
@@ -77,7 +77,7 @@ export const actions = {
   setRegistration({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/registration/getRegistration", {
+        .get("/registration/getRegistration", {
           params: {
             registrationId: request.registrationId,
             qrUuid: request.qrUuid,
@@ -95,7 +95,7 @@ export const actions = {
   setAttendees({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/registration/getAttendees", {
+        .get("/registration/getAttendees", {
           params: {
             eventId: request.eventId,
             searchKeyword: request.searchKeyword,
@@ -114,7 +114,7 @@ export const actions = {
   downloadAttendees({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/registration/downloadAttendees", {
+        .get("/registration/downloadAttendees", {
           params: {
             eventId: request.eventId,
           },
@@ -137,7 +137,7 @@ export const actions = {
   sendTicket({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/registration/sendTicket", {
+        .get("/registration/sendTicket", {
           params: {
             registrationId: request.registrationId,
             eventId: request.eventId,
@@ -154,7 +154,7 @@ export const actions = {
   removeRegistration({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/registration/removeRegistration", {
+        .get("/registration/removeRegistration", {
           params: {
             registrationId: request.registrationId,
             eventId: request.eventId,
@@ -172,7 +172,7 @@ export const actions = {
   getPaymentStatus({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .get("/api/stripe/sessionStatus", {
+        .get("/stripe/sessionStatus", {
           params: {
             sessionId: request.sessionId,
           },
@@ -188,7 +188,7 @@ export const actions = {
   updateStatus({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/registration/updateStatus", request)
+        .post("/registration/updateStatus", request)
         .then((response) => {
           resolve(response.data?.payload);
         })
@@ -200,7 +200,7 @@ export const actions = {
   createCheckout({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/stripe/createCheckout", request)
+        .post("/stripe/createCheckout", request)
         .then((response) => {
           // commit("setRegistration", response.data?.payload);
           resolve(response.data?.payload);
@@ -213,7 +213,7 @@ export const actions = {
   scanByExtrasPurchaseId({commit}, request) {
     return new Promise((resolve, reject) => {
       $axios
-        .post("/api/registration/scanByExtrasPurchaseId", {payload: request})
+        .post("/registration/scanByExtrasPurchaseId", {payload: request})
         .then((response) => {
           // commit("setRegistration", response.data?.payload);
           resolve(response.data?.payload);
