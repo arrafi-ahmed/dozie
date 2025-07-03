@@ -3,6 +3,8 @@ const path = require("path");
 const qr = require("qrcode");
 const {API_BASE_URL, VUE_BASE_URL, ANDROID_BASE_URL, NODE_ENV} = process.env;
 
+const excludedSecurityURLs = [];
+
 const isProd = NODE_ENV === "production";
 const ifSudo = (role) => role === 10;
 const ifAdmin = (role) => role === 20;
@@ -138,5 +140,6 @@ module.exports = {
     formatTime,
     ifSudo,
     ifAdmin,
+    excludedSecurityURLs,
     // logoSvgString,
 };
