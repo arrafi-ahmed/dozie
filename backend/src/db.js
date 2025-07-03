@@ -6,7 +6,7 @@ let sql = postgres({
     host: DB_HOST,
     port: DB_PORT,
     user: DB_USER,
-    database: DB_DATABASE,
+    database: DB_NAME,
     password: DB_PASSWORD,
     transform: {
         ...postgres.camel,
