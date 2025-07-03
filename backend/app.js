@@ -42,7 +42,7 @@ app.use("/form", require("./src/controller/form"));
 app.use("/appUser", require("./src/controller/appUser"));
 app.use("/stripe", require("./src/controller/stripe").router);
 
-app.get("/version", (req, res) => {
+app.get("/info", (req, res) => {
   res.status(200).json(appInfo);
 });
 
