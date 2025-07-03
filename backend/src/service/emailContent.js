@@ -1,4 +1,4 @@
-const {generateQrCode, formatTime} = require("../others/util");
+const {generateQrCode, formatTime, formatDateToMonDD} = require("../others/util");
 const {jsPDF} = require("jspdf");
 
 exports.generateTicketContent = async ({
@@ -54,7 +54,7 @@ Thank you for registering for ${event.name}!
 
 Your unique QR Code for event check-in is attached.
 
-We look forward to seeing you on ${event.startDate} – ${event.endDate} at ${event.location}.
+We look forward to seeing you on ${formatDateToMonDD(event.startDate)} – ${formatDateToMonDD(event.endDate)} at ${event.location}.
 
 Best regards,
 Convention Committee,

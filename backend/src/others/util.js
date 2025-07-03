@@ -27,6 +27,11 @@ const formatDate = (inputDate) => {
     return `${day}/${month}/${year}`;
 };
 
+function formatDateToMonDD(date) {
+    const options = { month: 'short', day: '2-digit' };
+    return date.toLocaleDateString('en-US', options);
+}
+
 const getApiPublicImgUrl = (imageName, type) =>
     `${API_BASE_URL}/${type}/${imageName}`
 
@@ -141,5 +146,6 @@ module.exports = {
     ifSudo,
     ifAdmin,
     excludedSecurityURLs,
+    formatDateToMonDD
     // logoSvgString,
 };

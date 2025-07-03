@@ -160,8 +160,8 @@ exports.sendTicket = async ({registrationId}) => {
     const event = {
         id: result.eId,
         name: result.name,
-        startDate: result.startDate,
-        endDate: result.endDate,
+        startDate: new Date(result.startDate),
+        endDate: new Date(result.endDate),
         location: result.location,
     };
     const extrasPurchase = {
