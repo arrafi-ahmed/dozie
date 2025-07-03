@@ -9,8 +9,7 @@ const store = useStore();
     <v-row justify="center" no-gutters>
       <v-col class="text-center" cols="12">
         <small>
-          Ferdinando Guzzo Consulting - &copy;
-          <strong>{{ appInfo.name }}</strong> {{ new Date().getFullYear() }}
+          &copy; <strong>{{ appInfo.name }}</strong> {{ new Date().getFullYear() }}
         </small>
       </v-col>
     </v-row>

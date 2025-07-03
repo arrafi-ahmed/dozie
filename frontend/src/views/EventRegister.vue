@@ -164,7 +164,7 @@ onUnmounted(() => {
                   {{ event.name }}
                 </v-card-title>
                 <v-card-subtitle class="text-center mb-4 mb-md-8"
-                >Registrati per inviare la tua richiesta
+                >Register to send your request
                 </v-card-subtitle>
                 <v-form
                   v-if="!showCheckout"
@@ -193,7 +193,7 @@ onUnmounted(() => {
                   >
                     <template v-slot:label>
                       <div>
-                        <span>Nome e cognome</span>
+                        <span>Name</span>
                         <span class="text-error"> *</span>
                       </div>
                     </template>
@@ -215,7 +215,7 @@ onUnmounted(() => {
                   >
                     <template v-slot:label>
                       <div>
-                        <span>Indirizzo e-mail</span>
+                        <span>Email</span>
                         <span class="text-error"> *</span>
                       </div>
                     </template>
@@ -224,7 +224,7 @@ onUnmounted(() => {
                   <phone
                     :density="xs ? 'comfortable' : 'default'"
                     :input-item="{
-                      text: 'Telefono',
+                      text: 'Phone',
                       required: true,
                       options: getCountryList('all'),
                     }"
@@ -249,29 +249,29 @@ onUnmounted(() => {
                     />
                   </div>
 
-                  <div class="pb-1 pb-md-3 pl-1 mt-3 mt-md-7 my-1">
-                    *Registrandoti accetti i
-                    <router-link
-                      :to="{ name: 'page-info', params: { type: 'terms' } }"
-                    >Termini e condizioni
-                    </router-link>
-                    ,
-                    <router-link
-                      :to="{
-                        name: 'page-info',
-                        params: { type: 'privacy-policy' },
-                      }"
-                    >l'Informativa sulla privacy
-                    </router-link>
-                    &
-                    <router-link
-                      :to="{
-                        name: 'page-info',
-                        params: { type: 'cookie-policy' },
-                      }"
-                    >l'Informativa sui cookie
-                    </router-link>
-                  </div>
+<!--                  <div class="pb-1 pb-md-3 pl-1 mt-3 mt-md-7 my-1">-->
+<!--                    *Registrandoti accetti i-->
+<!--                    <router-link-->
+<!--                      :to="{ name: 'page-info', params: { type: 'terms' } }"-->
+<!--                    >Termini e condizioni-->
+<!--                    </router-link>-->
+<!--                    ,-->
+<!--                    <router-link-->
+<!--                      :to="{-->
+<!--                        name: 'page-info',-->
+<!--                        params: { type: 'privacy-policy' },-->
+<!--                      }"-->
+<!--                    >l'Informativa sulla privacy-->
+<!--                    </router-link>-->
+<!--                    &-->
+<!--                    <router-link-->
+<!--                      :to="{-->
+<!--                        name: 'page-info',-->
+<!--                        params: { type: 'cookie-policy' },-->
+<!--                      }"-->
+<!--                    >l'Informativa sui cookie-->
+<!--                    </router-link>-->
+<!--                  </div>-->
 
                   <!-- Register Button -->
                   <v-btn
@@ -281,7 +281,7 @@ onUnmounted(() => {
                     rounded="lg"
                     size="x-large"
                     @click="registerUser"
-                  >{{ isEventFree ? "Registrati" : "Procedere" }}
+                  >{{ isEventFree ? "Register" : "Proceed" }}
                   </v-btn>
                   <div class="d-flex justify-center">
                     <v-btn
