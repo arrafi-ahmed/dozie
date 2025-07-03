@@ -1,0 +1,38 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "in": "npm install",
+    "up": "npm update --save",
+    "clear-cache": "rm -rf node_modules/.cache node_modules/.vite",
+    "dev": "npm run clear-cache && vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint  --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@mdi/font": "7.0.96",
+    "@stripe/stripe-js": "^4.10.0",
+    "axios": "^1.9.0",
+    "core-js": "^3.42.0",
+    "file-saver": "^2.0.5",
+    "qrcode-vue3": "^1.7.1",
+    "roboto-fontface": "^0.10.0",
+    "vanta": "^0.5.24",
+    "vue": "^3.4.27",
+    "vue-qrcode-reader": "^5.7.2",
+    "vue-router": "^4.5.1",
+    "vue-sonner": "^1.3.2",
+    "vuetify": "^3.8.3",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "sass": "^1.87.0",
+    "unplugin-fonts": "^1.3.1",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.4.18",
+    "vite-plugin-vuetify": "^2.1.1"
+  }
+}
