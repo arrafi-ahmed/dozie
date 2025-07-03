@@ -1,5 +1,5 @@
 const postgres = require("postgres");
-const {DB_HOST, DB_PORT, DB_DATABASE, DB_USER, DB_PASSWORD, NODE_ENV} =
+const {DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS, NODE_ENV} =
     process.env;
 
 let sql = postgres({
@@ -7,7 +7,7 @@ let sql = postgres({
     port: DB_PORT,
     user: DB_USER,
     database: DB_NAME,
-    password: DB_PASSWORD,
+    password: DB_PASS,
     transform: {
         ...postgres.camel,
         undefined: null,
