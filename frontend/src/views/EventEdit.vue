@@ -7,7 +7,7 @@ import {getEventImageUrl, isValidImage, toLocalISOString,} from "@/others/util";
 import {useDisplay} from "vuetify";
 import DatePicker from "@/components/DatePicker.vue";
 
-const {mobile} = useDisplay();
+const {xs} = useDisplay();
 const route = useRoute();
 const router = useRouter();
 const store = useStore();

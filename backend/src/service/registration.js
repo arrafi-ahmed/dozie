@@ -174,7 +174,7 @@ exports.sendTicket = async ({registrationId}) => {
     sendMailService
         .sendMailWAttachment(
             result.registrationData.email,
-            `Ticket for ${event.name}`,
+            `Check-in QR Code for ${event.name}`,
             emailBody,
             attachment,
         )

@@ -1,5 +1,6 @@
 const nodeMailer = require("nodemailer");
 const CustomError = require("../model/CustomError");
+const {appInfo} = require("../others/util");
 const {SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS} = process.env;
 
 const transporter = nodeMailer.createTransport({
@@ -14,7 +15,7 @@ const transporter = nodeMailer.createTransport({
 
 const sendMail = async (to, subject, html) => {
     return transporter.sendMail({
-        from: `Click Event <${SMTP_USER}>`,
+        from: `${appInfo.name} <${SMTP_USER}>`,
         to,
         // bcc: '',
         subject,
@@ -25,7 +26,7 @@ const sendMail = async (to, subject, html) => {
 const sendMailWAttachment = (to, subject, text, pdf) => {
     const pdfBuffer = Buffer.from(pdf.output(), "binary");
     const mailOptions = {
-        from: `Click Event <${SMTP_USER}>`,
+        from: `${appInfo.name} <${SMTP_USER}>`,
         to,
         // bcc: '',
         subject,

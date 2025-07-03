@@ -1,4 +1,4 @@
-const {generateQrCode, formatTime, appInfo} = require("../others/util");
+const {generateQrCode, formatTime} = require("../others/util");
 const {jsPDF} = require("jspdf");
 
 exports.generateTicketContent = async ({
@@ -48,16 +48,17 @@ exports.generateTicketContent = async ({
         doc.addImage(extrasQr, "JPEG", 20, posY, 80, 80);
     }
 
-    const emailBody = `Thank you for registering!
+    const emailBody = `Hi ${registration.registrationData.name},
 
-Attached is your event ticket.
+Thank you for registering for ${event.name}!
 
-If you purchased vouchers (such as drinks or food), you will also find separate QR codes to redeem them.
+Your unique QR Code for event check-in is attached.
 
-See you at the event!
+We look forward to seeing you on ${event.startDate} – ${event.endDate} at ${event.location}.
 
 Best regards,
-${appInfo.name}
+Convention Committee,
+Nnewi Union - Houston, Inc.
 `;
 
     return {attachment: doc, emailBody};
