@@ -9,6 +9,8 @@ process.env.TZ = "UTC";
 const express = require("express");
 const app = express();
 const path = require("path");
+
+const customHelmet = require("./src/middleware/customHelmet");
 const customCors = require("./src/middleware/customCors");
 const {
   globalErrHandler,
@@ -19,26 +21,28 @@ const port = process.env.PORT || 3000;
 
 // Uncomment if Stripe webhook is needed
 app.post(
-  "/api/stripe/webhook",
+  "/stripe/webhook",
   express.raw({ type: "application/json" }),
   require("./src/controller/stripe").webhook,
 );
 //middlewares
+app.use(customHelmet);
 app.use(customCors);
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 
 //routes
-app.use("/api/user", require("./src/controller/user"));
-app.use("/api/club", require("./src/controller/club"));
-app.use("/api/event", require("./src/controller/event"));
-app.use("/api/registration", require("./src/controller/registration"));
-app.use("/api/checkin", require("./src/controller/checkin"));
-app.use("/api/form", require("./src/controller/form"));
-app.use("/api/appUser", require("./src/controller/appUser"));
-app.use("/api/stripe", require("./src/controller/stripe").router);
+app.use("/user", require("./src/controller/user"));
+app.use("/club", require("./src/controller/club"));
+app.use("/event", require("./src/controller/event"));
+app.use("/registration", require("./src/controller/registration"));
+app.use("/checkin", require("./src/controller/checkin"));
+app.use("/form", require("./src/controller/form"));
+app.use("/appUser", require("./src/controller/appUser"));
+app.use("/stripe", require("./src/controller/stripe").router);
 
-app.get("/api/version", (req, res) => {
+app.get("/version", (req, res) => {
   res.status(200).json(appInfo);
 });
 
