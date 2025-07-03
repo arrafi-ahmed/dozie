@@ -2,7 +2,7 @@ const nodeMailer = require("nodemailer");
 const CustomError = require("../model/CustomError");
 const {appInfo} = require("../others/util");
 const {SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, EMAIL_SENDER} = process.env;
-const sender = EMAIL_SENDER || `${appInfo.name} <${SMTP_USER}>`;
+const sender = `${EMAIL_SENDER || appInfo.name} <${SMTP_USER}>`;
 
 const transporter = nodeMailer.createTransport({
     host: SMTP_HOST,
