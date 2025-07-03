@@ -28,7 +28,7 @@ exports.generateTicketContent = async ({
         qrUuid: registration.qrUuid,
     });
     doc.text("QR Code for Checkin:", 20, 70);
-    doc.addImage(mainQr, "JPEG", 15, 75, 200, 200);
+    doc.addImage(mainQr, "JPEG", 10, 75, 200, 200);
 
     if (extrasPurchase?.id) {
         doc.addPage();
@@ -45,7 +45,7 @@ exports.generateTicketContent = async ({
             qrUuid: extrasPurchase.qrUuid,
         });
         const posY = 35 + (extrasPurchase.extrasData.length - 1) * 10;
-        doc.addImage(extrasQr, "JPEG", 15, posY, 200, 200);
+        doc.addImage(extrasQr, "JPEG", 10, posY, 200, 200);
     }
 
     const emailBody = `Hi ${registration.registrationData.name},
