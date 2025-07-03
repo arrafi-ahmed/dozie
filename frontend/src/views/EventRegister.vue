@@ -276,6 +276,7 @@ onUnmounted(() => {
                   <!-- Register Button -->
                   <v-btn
                     :density="xs ? 'comfortable' : 'default'"
+                    class="mt-3 mt-md-7"
                     block
                     color="primary"
                     rounded="lg"

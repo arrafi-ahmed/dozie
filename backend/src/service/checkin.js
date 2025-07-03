@@ -48,7 +48,7 @@ exports.scanByRegistrationId = async ({qrCodeData, eventId, userId}) => {
         newCheckin.id = registration.cId;
     }
     const updatedCheckin = await exports.save({newCheckin});
-    console.log(1, newCheckin, updatedCheckin,)
+
     return {...registration, status: updatedCheckin.status, checkinTime: updatedCheckin.checkinTime};
 };
 

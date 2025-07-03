@@ -23,7 +23,7 @@ exports.bulkImportAttendee = async ({excelFile, eventId, clubId}) => {
         const rowObj = Object.fromEntries(
             headers.map((h, i) => [h, values[i] || ""]),
         );
-        console.log(1, rowObj);
+
         rows.push(rowObj);
     });
 
@@ -133,6 +133,9 @@ exports.getRegistrationWEventWExtrasPurchase = async ({registrationId}) => {
         SELECT *,
                r.id       AS r_id,
                e.id       AS e_id,
+               e.start_date,
+               e.end_date,
+               e.location,
                ep.id      AS ep_id,
                r.qr_uuid  AS r_qr_uuid,
                ep.qr_uuid AS ep_qr_uuid

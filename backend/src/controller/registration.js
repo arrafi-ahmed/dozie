@@ -76,7 +76,7 @@ router.post(
     async (req, res, next) => {
         try {
             const excelFile = req.files?.[0];
-            console.log(excelFile, req.body, req.files[0])
+
             if (!excelFile)
                 return res.status(400).json({message: "Excel file required"});
 

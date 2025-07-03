@@ -13,7 +13,7 @@ export const mutations = {
     state.token = payload;
   },
   setCurrentUser(state, payload) {
-    console.log(2, payload)
+
     state.currentUser = {...state.currentUser, ...payload};
     let currentUser = JSON.parse(localStorage.getItem("currentUser"));
     currentUser = {...currentUser, ...payload};
@@ -83,7 +83,7 @@ export const getters = {
     return !!state.token;
   },
   calcHome(state, getters) {
-    console.log(state.currentUser)
+
     // add all the app roles here, and their default home page
     return getters.isAdmin
       ? {name: "dashboard-admin"}

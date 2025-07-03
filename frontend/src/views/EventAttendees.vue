@@ -105,7 +105,6 @@ const sortByCheckin = () => {
 };
 
 const handleSendToWhatsapp = (registration) => {
-  console.log(1, registration)
   const phone = registration.registrationData.phone.slice(1);
   const message = `QR code download link: ${clientBaseUrl}/qr/${registration.id}/${registration.qrUuid}`;
   sendToWhatsapp(phone, message);

@@ -41,10 +41,8 @@ export function registerPlugins(app) {
     const currentUser = store.getters["user/getCurrentUser"];
     const redirectRoute = handleAuthRoutes(to, isSignedin, currentUser.role);
     if (redirectRoute) {
-      console.log(10, redirectRoute)
       next(redirectRoute);
     } else {
-      console.log(11)
       if (
         handleRemoveQueriesNRedirect({
           params: ["apiQueryMsg"],

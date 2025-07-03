@@ -8,7 +8,7 @@ const {ifAdmin} = require("../others/util");
 const generateAuthData = async (result) => {
     let token = "";
     let currentUser = {};
-    console.log(2, result)
+
     if (result) {
         currentUser = {
             id: result.id,
@@ -27,7 +27,7 @@ const generateAuthData = async (result) => {
         }
         token = jwt.sign({currentUser}, process.env.TOKEN_SECRET);
     }
-    console.log(3, currentUser)
+
     return {token, currentUser};
 };
 
